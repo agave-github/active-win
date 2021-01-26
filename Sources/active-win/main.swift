@@ -11,12 +11,6 @@ func getActiveBrowserTabURLAppleScriptCommand(_ appName: String) -> String? {
 	}
 }
 
-// Show accessibility permission prompt if needed. Required to get the complete window title.
-if !AXIsProcessTrustedWithOptions(["AXTrustedCheckOptionPrompt": true] as CFDictionary) {
-	print("active-win requires the accessibility permission in “System Preferences › Security & Privacy › Privacy › Accessibility”.")
-	exit(1)
-}
-
 let frontmostAppPID = NSWorkspace.shared.frontmostApplication!.processIdentifier
 let windows = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as! [[String: Any]]
 
@@ -50,7 +44,7 @@ for window in windows {
 
 	// This can't fail as we're only dealing with apps.
 	let app = NSRunningApplication(processIdentifier: appPid)!
-	
+
 	let appName = window[kCGWindowOwnerName as String] as! String
 
 	var dict: [String: Any] = [
