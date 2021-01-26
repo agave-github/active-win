@@ -1,67 +1,68 @@
 {
-  "name": "active-win",
-  "version": "6.2.0",
-  "description": "Get metadata about the active window (title, id, bounds, owner, URL, etc). Works on macOS, Linux, Windows.",
-  "license": "MIT",
-  "repository": "sindresorhus/active-win",
-  "funding": "https://github.com/sponsors/sindresorhus",
-  "author": {
-	"name": "Sindre Sorhus",
-	"email": "sindresorhus@gmail.com",
-	"url": "https://sindresorhus.com"
-  },
-  "engines": {
-	"node": ">=8"
-  },
-  "scripts": {
-	"test": "xo && ava && tsd",
-	"build": "swift build --configuration=release && mv .build/release/active-win main",
-	"prepare": "systemver=$(uname -s); if [[ $systemver == \"Darwin\" ]]; then npm run build; else echo \"No build needed\"; fi;"
-  },
-  "files": [
-	"index.js",
-	"index.d.ts",
-	"lib",
-	"main"
-  ],
-  "keywords": [
-	"macos",
-	"linux",
-	"windows",
-	"app",
-	"application",
-	"window",
-	"win",
-	"active",
-	"focused",
-	"current",
-	"title",
-	"name",
-	"id",
-	"pid",
-	"screenshot",
-	"capture",
-	"metadata",
-	"bounds",
-	"memory",
-	"usage",
-	"bundleid",
-	"browser",
-	"url",
-	"chrome",
-	"safari",
-	"edge",
-	"brave"
-  ],
-  "devDependencies": {
-	"ava": "^2.4.0",
-	"tsd": "^0.10.0",
-	"xo": "^0.25.3"
-  },
-  "optionalDependencies": {
-	"ffi-napi": "^2.4.5",
-	"ref-napi": "^3.0.0",
-	"ref-wchar-napi": "^1.0.2",
-	"ref-struct-napi": "^1.1.0"
-  }
+	"name": "active-win",
+	"version": "6.2.0",
+	"description": "Get metadata about the active window (title, id, bounds, owner, URL, etc). Works on macOS, Linux, Windows.",
+	"license": "MIT",
+	"repository": "sindresorhus/active-win",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd",
+		"build": "swift build --configuration=release && mv .build/release/active-win main",
+		"prepare:macos": "npm run build"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"lib",
+		"main"
+	],
+	"keywords": [
+		"macos",
+		"linux",
+		"windows",
+		"app",
+		"application",
+		"window",
+		"win",
+		"active",
+		"focused",
+		"current",
+		"title",
+		"name",
+		"id",
+		"pid",
+		"screenshot",
+		"capture",
+		"metadata",
+		"bounds",
+		"memory",
+		"usage",
+		"bundleid",
+		"browser",
+		"url",
+		"chrome",
+		"safari",
+		"edge",
+		"brave"
+	],
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"run-script-os": "^1.1.5",
+		"tsd": "^0.10.0",
+		"xo": "^0.25.3"
+	},
+	"optionalDependencies": {
+		"ffi-napi": "^2.4.5",
+		"ref-napi": "^3.0.0",
+		"ref-wchar-napi": "^1.0.2",
+		"ref-struct-napi": "^1.1.0"
+	}
 }
