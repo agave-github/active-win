@@ -16,7 +16,7 @@
 	"scripts": {
 		"test": "xo && ava && tsd",
 		"build": "swift build --configuration=release && mv .build/release/active-win main",
-		"prepare": "node prepare.js"
+		"prepare": "node ./prepare.js"
 	},
 	"files": [
 		"index.js",
