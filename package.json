@@ -55,7 +55,6 @@
 	],
 	"devDependencies": {
 		"ava": "^2.4.0",
-		"run-script-os": "^1.1.5",
 		"tsd": "^0.10.0",
 		"xo": "^0.25.3"
 	},
